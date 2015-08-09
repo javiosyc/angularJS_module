@@ -8,6 +8,12 @@
         vm.url = $cookies.get("url");
         //vm.IsDebug = false;
 
+        var count = 1;
+        vm.debug = function() {
+        	console.log(count++);
+        }
+
+
         vm.PName = 'T-Shirt (Female)';
         vm.Price = 200;
         vm.Qty = 5;

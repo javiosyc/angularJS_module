@@ -12,10 +12,25 @@
     <script src="values.js"></script>
     <meta charset="utf-8">
     <title>【AngularJS 開發實戰：新手入門篇】實作練習</title>
+    <script type="text/javascript">
+    function getVersion(btn) {
+      var $injector = angular.element(btn).injector();
+
+      var version =  $injector.get("version");
+
+      alert(version);
+    }
+    function getPName (btn) {
+      $scope = angular.element(btn).scope();
+      alert($scope.m.PName);
+    }
+    </script>
 </head>
 
 <body ng-controller="MainCtrl as m">
-    版本: {{ version}}
+    版本: {{ version}} <hr/>
+    {{m.debug()}}
+    <button onclick="getVersion(this)">取得版本</button>
     <br> 商品名稱:
     <input type="text" ng-model="m.PName">
     <br> 商品價格:
@@ -28,6 +43,8 @@
     <br>
     <button ng-click="m.add()">加入購物車</button>
     <button ng-click="m.carts=[]">清空購物車</button>
+
+    <button onclick="getPName(this)">取得商品名稱</button>
     <br>
     <br>
     <label>
