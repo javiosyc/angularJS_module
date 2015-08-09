@@ -2,9 +2,10 @@
 
     angular.module('app').controller('MainCtrl',MainCtrl);
 
-    function MainCtrl($cookies) {
+    function MainCtrl($cookies ,item) {
         var vm = this;
 
+        vm.item = item;
         vm.url = $cookies.get("url");
         //vm.IsDebug = false;
 

@@ -23,13 +23,18 @@
     function getPName (btn) {
       $scope = angular.element(btn).scope();
       alert($scope.m.PName);
+
+      $scope.m.PName += "ox"; 
+
+      $scope.$apply();
     }
     </script>
 </head>
 
 <body ng-controller="MainCtrl as m">
     版本: {{ version}} <hr/>
-    {{m.debug()}}
+    {{m.debug()}} <hr/>
+    {{m.item}}
     <button onclick="getVersion(this)">取得版本</button>
     <br> 商品名稱:
     <input type="text" ng-model="m.PName">
